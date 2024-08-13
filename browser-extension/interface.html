@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Syndex</title>
+    <link rel="icon" href="icon.png" type="image/png">
+    <style>
+        /* Light Mode Colors (default) */
+        /* :root { */
+        /*     --bg-color: #ffffff; */
+        /*     --text-color: #000000; */
+        /*     --link-color: #0366d6; */
+        /*     --border-color: #ddd; */
+        /*     --hover-bg-color: #f9f9f9; */
+        /*     --button-bg-color: #0366d6; */
+        /*     --button-text-color: #ffffff; */
+        /* } */
+
+        /* Dark Mode Colors (commented out by default) */
+        :root {
+            --bg-color: #1e1e2e;
+            --text-color: #cdd6f4;
+            --link-color: #f38ba8;
+            --border-color: #1e1e2e;
+            --hover-bg-color: #1e1e2e;
+            --button-bg-color: #f38ba8;
+            --button-text-color: #1e1e2e;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.4;
+            font-size: 16px;
+            padding: 0 10px;
+            margin: 50px auto;
+            max-width: 650px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        #maincontent {
+            max-width: 42em;
+            margin: 15px auto;
+        }
+
+        h2 {
+            margin-top: 70px;
+        }
+
+        #portInput {
+            width: 60px;
+            padding: 5px;
+            margin-right: 10px;
+            font-size: 16px;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+        }
+
+        #refreshButton {
+            padding: 5px 10px;
+            background-color: var(--button-bg-color);
+            color: var(--button-text-color);
+            border: none;
+            cursor: pointer;
+            margin-right: 10px;
+            font-size: 16px;
+        }
+
+        #refreshButton:hover {
+            opacity: 0.8;
+        }
+
+        #status {
+            margin-top: 20px;
+            font-style: italic;
+        }
+
+        #rssContent {
+            white-space: pre-wrap;
+            font-family: monospace;
+            margin-top: 20px;
+            border-radius: 3px;
+            background-color: var(--hover-bg-color);
+            padding: 10px;
+            border: 1px solid var(--border-color);
+        }
+
+        #rssContent a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        #rssContent a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div id="maincontent">
+        <div id="rssContent"></div>
+        <div id="status"></div>
+        <div>
+            <label for="portInput">Port:</label>
+            <input type="number" id="portInput" min="1" max="65535" value="9000">
+        </div>
+    </div>
+    <script src="interface.js"></script>
+</body>
+</html>
